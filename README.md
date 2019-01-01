@@ -11,11 +11,11 @@ let input = Input(key: "inputTexture", value: .color)
 let inputLUT = Input(key: "inputTexture2", value: .symbol(lutSymbol))
 let output = Output(key: .color, value: .color)
 let filter = MetalFilter(name: "apply_filter",
-vertexShader: "oneInputVertex",
-fragmentShader: "lookupFragment",
-draw: .quad,
-inputs: [input, inputLUT],
-outputs: [output])
+                          vertexShader: "oneInputVertex",
+                          fragmentShader: "lookupFragment",
+                          draw: .quad,
+                          inputs: [input, inputLUT],
+                          outputs: [output])
 let config = SCNTechnique.Configuration(filters: [filter], symbols: [lutSymbol])
 scnView.technique = SCNTechnique(config)
 ```
