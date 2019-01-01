@@ -1,0 +1,16 @@
+PODS:
+  - Technical (0.1.0)
+
+DEPENDENCIES:
+  - Technical (from `../`)
+
+EXTERNAL SOURCES:
+  Technical:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Technical: 36100d161e814b0e462344456a9230b0840b3ee8
+
+PODFILE CHECKSUM: defba02e0f3ce176be3434070fe5bad31b816c0c
+
+COCOAPODS: 1.6.0.beta.2

@@ -1,9 +1,24 @@
-# Technical
+<h1 align="center">
+Technical
+<br>
+</h1>
 
-[![CI Status](https://img.shields.io/travis/noppefoxwolf/Technical.svg?style=flat)](https://travis-ci.org/noppefoxwolf/Technical)
-[![Version](https://img.shields.io/cocoapods/v/Technical.svg?style=flat)](https://cocoapods.org/pods/Technical)
-[![License](https://img.shields.io/cocoapods/l/Technical.svg?style=flat)](https://cocoapods.org/pods/Technical)
-[![Platform](https://img.shields.io/cocoapods/p/Technical.svg?style=flat)](https://cocoapods.org/pods/Technical)
+## Usage
+
+```swift
+let lutSymbol = ImageSymbol(name: "lutSymbol", image: "lookup_amatorka.png", type: .sampler2D)
+let input = Input(key: "inputTexture", value: .color)
+let inputLUT = Input(key: "inputTexture2", value: .symbol(lutSymbol))
+let output = Output(key: .color, value: .color)
+let filter = MetalFilter(name: "apply_filter",
+vertexShader: "oneInputVertex",
+fragmentShader: "lookupFragment",
+draw: .quad,
+inputs: [input, inputLUT],
+outputs: [output])
+let config = SCNTechnique.Configuration(filters: [filter], symbols: [lutSymbol])
+scnView.technique = SCNTechnique(config)
+```
 
 ## Example
 
